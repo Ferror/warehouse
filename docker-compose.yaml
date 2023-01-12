@@ -1,28 +1,23 @@
 services:
-#  backstage-backend:
-#    build:
-#      context: backstage/packages/backend
-#      dockerfile: Dockerfile
-#    command:
-#      - yarn
-#      - start-backend
-#    environment:
-#      POSTGRES_HOST: database
-#      POSTGRES_USER: postgres
-#    volumes:
-#      - ./backstage:/app
-#
-#  backstage-frontend:
-#    build:
-#      context: backstage/packages/backend
-#      dockerfile: Dockerfile
-#    command:
-#      - yarn
-#      - start
-#    environment:
-#      POSTGRES_HOST: database
-#      POSTGRES_USER: postgres
-#    volumes:
+  backstage-backend:
+    build:
+      context: backstage
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_USER: postgres
+    ports:
+      - 7007:7007
+    volumes:
+      - ./backstage:/app
+
+  backstage-frontend:
+    build:
+      context: backstage
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
       - ./backstage:/app
 
   database:

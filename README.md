@@ -22,4 +22,5 @@ Most of my projects are backend-only, but this time I will try to visualize simp
 
 * Backend
 * Frontend
-* Operations
+* Backstage
+- [ ] Dockerize Backstage 
