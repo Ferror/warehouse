@@ -17,3 +17,9 @@ We should raise an issue and notify right people, maybe create an investigation 
 Most of my projects are backend-only, but this time I will try to visualize simply the movement and the process of receiving, issuing and storing the package.
 
 ![THERE WILL BE UI]()
+
+# Components
+
+* Backend
+* Frontend
+* Operations
