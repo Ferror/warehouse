@@ -10,6 +10,8 @@ Packages are coming in and out of the warehouse. Each time they change their loc
 Yet, sometimes they are in the wrong place. What should happen then? We know where the package is, but if the flow went somehow wrong.
 We should raise an issue and notify right people, maybe create an investigation task.
 
+![](./warehouse.png)
+
 ## UI
 
 Most of my projects are backend-only, but this time I will try to visualize simply the movement and the process of receiving, issuing and storing the package.
