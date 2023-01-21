@@ -3,6 +3,9 @@ services:
     build:
       context: backstage
       dockerfile: Dockerfile
+    command:
+      - yarn
+      - start-backend
     environment:
       POSTGRES_HOST: database
       POSTGRES_USER: postgres
@@ -15,16 +18,16 @@ services:
     build:
       context: backstage
       dockerfile: Dockerfile
+    command:
+      - yarn
+      - serve
     ports:
       - 3000:3000
     volumes:
       - ./backstage:/app
 
-  database:
-    image: postgres:13-alpine
+  backstage-database:
+    image: postgres:15-alpine
     restart: always
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-
-#  backend:
-#  frontend:

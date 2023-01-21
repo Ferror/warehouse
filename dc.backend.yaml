@@ -1,0 +1,8 @@
+services:
+  backend:
+    build:
+      context: backend/.
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - 80:80
