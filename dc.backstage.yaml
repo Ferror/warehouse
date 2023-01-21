@@ -1,33 +1,19 @@
 services:
-  backstage-backend:
+  backstage:
     build:
       context: backstage
-      dockerfile: Dockerfile
-    command:
-      - yarn
-      - start-backend
+      dockerfile: packages/backend/Dockerfile
     environment:
-      POSTGRES_HOST: database
+      # This value must match the name of the postgres configuration block.
+      POSTGRES_HOST: db
       POSTGRES_USER: postgres
+      GITHUB_TOKEN: abc
     ports:
       - 7007:7007
-    volumes:
-      - ./backstage:/app
 
-  backstage-frontend:
-    build:
-      context: backstage
-      dockerfile: Dockerfile
-    command:
-      - yarn
-      - serve
-    ports:
-      - 3000:3000
-    volumes:
-      - ./backstage:/app
-
-  backstage-database:
+  backstage-db:
     image: postgres:15-alpine
     restart: always
     environment:
+      # NOT RECOMMENDED for a production environment. Trusts all incoming connections.
       POSTGRES_HOST_AUTH_METHOD: trust
