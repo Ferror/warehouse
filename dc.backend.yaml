@@ -6,3 +6,5 @@ services:
       target: dev
     ports:
       - 80:80
+    volumes:
+      - /backend/app:/var/www/html:delegate
