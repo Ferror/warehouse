@@ -1,6 +1,8 @@
+ARG PHP_VERSION=8.2.8
+
 FROM composer:2.4 AS composer
 
-FROM php:8.2-apache AS prod
+FROM php:${PHP_VERSION}-apache AS prod
 
 RUN apt-get update && apt-get install zip unzip && apt-get clean
 
